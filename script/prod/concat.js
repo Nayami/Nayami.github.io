@@ -1,4 +1,4 @@
 "use strict";
 
-var someParam = "loremsa";
+var someParam = "test param";
 console.log(someParam);

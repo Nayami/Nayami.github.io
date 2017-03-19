@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" rel="stylesheet/scss">
 	#page-router-container {
 		position : relative;
 		> div {
