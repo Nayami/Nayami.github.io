@@ -1,0 +1,140 @@
+/**
+ * ==================== Content Markup ======================
+ * 10.07.2016
+ */
+.flex-container {
+	display : flex;
+	&.flex-row {
+		flex-flow : row wrap;
+	}
+}
+
+// flex-col          1/3
+// flex-col-desktop  1/3
+// flex-col-tablet   1/3
+// flex-col-phone    1/3
+@mixin flex-col {
+	.flex-col {
+		flex-basis : 33.3333333333%;
+	}
+	$baseFlexWidth : 5;
+	@for $i from 5 through 24 {
+		.flex-col-#{$baseFlexWidth} {
+			flex-basis : percentage($baseFlexWidth)/100;
+		}
+		$baseFlexWidth : $baseFlexWidth + 5;
+	}
+
+	/*Desktop*/
+	$baseFlexWidth : 5;
+	@media (min-width : 952px) {
+		.flex-col-desktop {
+			flex-basis : 33.3333333333%;
+		}
+		@for $i from 5 through 24 {
+			.flex-col-desktop-#{$baseFlexWidth} {
+				flex-basis : percentage($baseFlexWidth)/100;
+			}
+			$baseFlexWidth : $baseFlexWidth + 5;
+		}
+	}
+
+	/*Tablet*/
+	$baseFlexWidth : 5;
+	@media (max-width : 951px) {
+		.flex-col-tablet {
+			flex-basis : 33.3333333333%;
+		}
+		@for $i from 5 through 24 {
+			.flex-col-tablet-#{$baseFlexWidth} {
+				flex-basis : percentage($baseFlexWidth)/100;
+			}
+			$baseFlexWidth : $baseFlexWidth + 5;
+		}
+
+	}
+
+	/*Mobile*/
+	$baseFlexWidth : 5;
+	@media (max-width : 767px) {
+		.flex-col-phone {
+			flex-basis : 33.3333333333%;
+		}
+		@for $i from 5 through 24 {
+			.flex-col-phone-#{$baseFlexWidth} {
+				flex-basis : percentage($baseFlexWidth)/100;
+			}
+			$baseFlexWidth : $baseFlexWidth + 5;
+		}
+	}
+
+}
+
+@include flex-col;
+
+%space-x-section {
+	float   : none;
+	clear   : both;
+	display : block;
+	width   : 100%;
+	@include clearfix();
+}
+
+@mixin space-x {
+	@for $i from 1 through 20 {
+		.space-x-#{$i} {
+			@extend %space-x-section;
+			height : ($i*5)+px;
+		}
+	}
+}
+
+@mixin padding-top-x {
+	@for $i from 1 through 10 {
+		.padding-top-#{$i}0 {
+			/*Desktop*/
+			@media (min-width : 952px) {
+				padding-top : ($i*10)+px;
+			}
+		}
+	}
+}
+
+@mixin padding-bottom-x {
+	@for $i from 1 through 10 {
+		.padding-bottom-#{$i}0 {
+			/*Desktop*/
+			@media (min-width : 952px) {
+				padding-bottom : ($i*10)+px;
+			}
+		}
+	}
+}
+
+@mixin padding-left-x {
+	@for $i from 1 through 10 {
+		.padding-left-#{$i}0 {
+			/*Desktop*/
+			@media (min-width : 952px) {
+				padding-left : ($i*10)+px;
+			}
+		}
+	}
+}
+
+@mixin padding-right-x {
+	@for $i from 1 through 10 {
+		.padding-right-#{$i}0 {
+			/*Desktop*/
+			@media (min-width : 952px) {
+				padding-right : ($i*10)+px;
+			}
+		}
+	}
+}
+
+@include space-x();
+//@include padding-top-x();
+//@include padding-bottom-x();
+//@include padding-left-x();
+//@include padding-right-x();

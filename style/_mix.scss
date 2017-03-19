@@ -1,0 +1,33 @@
+
+@mixin transition($time : 0.3s, $prop : all) {
+	-webkit-transition : $prop, $time;
+	-moz-transition    : $prop, $time;
+	-o-transition      : $prop, $time;
+	transition         : $prop, $time;
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content : " "; // 1
+		display : table; // 2
+	}
+	&:after {
+		clear : both;
+	}
+}
+
+@mixin placeholder-color($color : $mainColor) {
+	::-webkit-input-placeholder {
+		color : $color;
+	}
+	::-moz-placeholder {
+		color : $color;
+	}
+	:-ms-input-placeholder {
+		color : $color;
+	}
+	:-moz-placeholder {
+		color : $color;
+	}
+}
