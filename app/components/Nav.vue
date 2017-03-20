@@ -3,13 +3,13 @@
 		<!--Mobile nav-->
 		<div id="mobile-navigator" class="phone-viewport hidden-on-desktop">
 			<md-toolbar>
-				<md-button class="md-icon-button" @click="toggleLeftSidenav">
+				<md-button class="md-icon-button" @click.native="toggleLeftSidenav">
 					<md-icon>menu</md-icon>
 				</md-button>
 				<h2 class="md-title">{{$parent.applicationName}}</h2>
 
 
-				<md-button class="md-icon-button flex-left-auto" @click="toggleRightSidenav">
+				<md-button class="md-icon-button flex-left-auto" @click.native="toggleRightSidenav">
 					<md-icon>view_comfy</md-icon>
 				</md-button>
 
@@ -49,18 +49,23 @@
 				</md-toolbar>
 
 				<md-list>
-					<md-list-item @click="$refs.leftSidenav.toggle()" class="md-primary">
-						<router-link class="button" to="/" exact>
-							<md-icon>insert_drive_file</md-icon><span>Home Link</span>
+					<md-list-item>
+						<router-link
+							@click.native="$refs.leftSidenav.toggle()"
+							to="/" exact><md-icon>insert_drive_file</md-icon><span>Home Link</span>
 						</router-link>
 					</md-list-item>
 
-					<md-list-item @click="$refs.leftSidenav.toggle()">
-						<router-link class="button" to="/about">
-							<md-icon>people</md-icon><span>About Link</span>
+					<md-list-item>
+						<router-link
+							@click.native="$refs.leftSidenav.toggle()"
+							to="/about"><md-icon>people</md-icon><span>About Link</span>
 						</router-link>
 					</md-list-item>
 				</md-list>
+
+
+
 
 			</md-sidenav>
 
@@ -70,7 +75,7 @@
 						<h3 class="md-title">Sidenav content</h3>
 					</div>
 				</md-toolbar>
-				<md-button class="md-raised md-accent" @click="closeRightSidenav">Close</md-button>
+				<md-button class="md-raised md-accent" @click.native="closeRightSidenav">Close</md-button>
 			</md-sidenav>
 		</div>
 		<!--Mobile nav end-->

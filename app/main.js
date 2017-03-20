@@ -1,27 +1,26 @@
-window.Vuex = require('vuex')
+window.Vuex = require('vuex');
 window.VueResource = require('vue-resource')
 window.VueMaterial = require('vue-material')
 window.eventHub = new Vue()
 Vue.use(VueMaterial)
 
-Vue.material.registerTheme({
-	default: {
-		primary: {
-			color: 'blue-grey',
-			hue: 600
-		},
-		accent: {
-			color: 'blue'
-		},
-		warn: {
-			color: 'red'
-		}
+Vue.material.registerTheme('default', {
+	primary: {
+		color: 'teal',
+		hue: 900
+	},
+	accent: {
+		color: 'amber',
+		hue: 900
+	},
+	warn: {
+		color: 'red',
+		hue: 700
 	}
-})
+});
 
-
-var store = require('./store')
-var router = require('./routes')
+let store = require('./store')
+let router = require('./routes')
 
 Vue.component('entry-point', require('./index.vue'))
 Vue.component('navigation', require('./components/Nav.vue'))
@@ -37,7 +36,7 @@ new Vue({
 	},
 
 	created: function() {
-		var vm = this;
+		let vm = this;
 
 		this.$http.get('/process/processor.php')
 			.then(function(response) {

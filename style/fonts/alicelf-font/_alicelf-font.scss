@@ -32,29 +32,29 @@ $afdir : $fontDir+"alicelf-font/fonts/";
 		font-weight             : normal !important;
 		font-variant            : normal !important;
 		text-transform          : none !important;
-		speak                   : none;
-		line-height             : 1;
-		-webkit-font-smoothing  : antialiased;
-		-moz-osx-font-smoothing : grayscale;
 	}
 }
 
-
 .alice-alicelf-brand:before {
-	content: "\61";
+	content : "\61";
 }
+
 .alice-upwork-logo:before {
-	content: "\62";
+	content : "\62";
 }
+
 .alice-upwork-square:before {
-	content: "\63";
+	content : "\63";
 }
+
 .alice-javascript-logo:before {
-	content: "\67";
+	content : "\67";
 }
+
 .alice-sass-logo:before {
-	content: "\6a";
+	content : "\6a";
 }
+
 .alice-bws:before {
-	content: "\64";
+	content : "\64";
 }

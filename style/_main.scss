@@ -10,8 +10,14 @@ body {
 }
 
 #desktop-logo {
-	padding   : 8px;
+	padding   : 5px;
 	font-size : 70px;
+
+	i.alice-bws {
+		display         : flex;
+		justify-content : center;
+		align-items     : center;
+	}
 }
 
 #mobile-navigator {
